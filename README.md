@@ -53,11 +53,15 @@ Have fun, mk
 ## Try it out directly
 
 It is easy to program eForth into the TI MSP430 Launchpad. Get the
-[mspdebug tool](https://github.com/dlbeer/mspdebug) and type:
+[mspdebug tool](https://github.com/dlbeer/mspdebug), start it via
+`mspdebug rf2500`, and then type:
 
-    mspdebug rf2500 "prog eForth431-msp430g2553-naken.hex"
-
-Do not forget RESET after programming.
+    erase all
+    erase 1000
+    prog eForth431-msp430g2553-naken.hex
+    verify eForth431-msp430g2553-naken.hex
+    reset
+    exit
 
 Then start your favourite Terminal program and start writing short
 examples, like in
@@ -82,8 +86,7 @@ That is for another Forth, but the handling is the same.
 Read the included eForth_Overview.pdf to understand eforth.
 
 - Need the Programmer?  
-https://www.elprotronic.com/  
-"Lite FET-Pro430 Elprotronic Programmer" burns image into MCU. Get the free version there.
+Just use the [mspdebug tool](https://github.com/dlbeer/mspdebug).
 
 - More books  
 https://wiki.forth-ev.de/doku.php/projects:ting_s_electronic_forth_bookshelf
