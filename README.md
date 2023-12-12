@@ -16,9 +16,9 @@ Debuged and contribution of Flash Tools by Manfred Mahlow, Jul 2018
 
 is 430eForth43 with the following extensions/modifications:
 
-  * two tiny (hidden) Flash Tools added (FSCAN and QFLASH)
-  * LITERAL and ALIGNED revealed (made visible)
-  * ERASE and WRITE renamed to IERASE and IWRITE (because of a name conflict)
+  * two tiny (hidden) Flash Tools added (`FSCAN` and `QFLASH`)
+  * `LITERAL` and `ALIGNED` revealed (made visible)
+  * `ERASE` and `WRITE` renamed to `IERASE` and `IWRITE` (because of a name conflict)
 
 `FSCAN` Scans the Flash on COLD start and makes CP point to the start
 of the unused Flash area. So 430eForth43n1 behaves like a Forth in RAM
@@ -30,16 +30,16 @@ full (CP >= $FFC0)
 ### FlashTools43n1.efs
 
 Source code file to be included in a newly flashed 430eForth43n1. Adds
-the words SAVE, RESET and MARKER.
+the words `SAVE`, `RESET` and `MARKER`.
 
-`SAVE ( -- )` Saves the current eForth state to the COLD start data.
+`SAVE ( -- )` Saves the current eForth state to the `COLD` start data.
 
 `RESET ( -- )` Erases the Flash Memory, resets the user variables and
 the reset vector and restarts eForth.
 
 `MARKER ( <name> -- )` Creates a word <name>. When <name> is executed
 it erases itself and all later defined words from the dictionary,
-updates the user variables and executes SAVE.
+updates the user variables and executes `SAVE`.
 
 ## Assembling eForth
 
@@ -90,6 +90,7 @@ https://wiki.forth-ev.de/doku.php/projects:ting_s_electronic_forth_bookshelf
 
 ## Verification
 
+```
 430eforth.a43  
 Reading Code File ........................... done  
 Code size = 0x1058 ( 4184 ) bytes
@@ -97,10 +98,11 @@ Code size = 0x1058 ( 4184 ) bytes
 eForth431-msp430g2553-naken.hex  
 Reading Code File ........................... done
 Code size = 0x10B8 ( 4280 ) bytes
+```
 
 The eForth431-msp430g2553-naken.hex image differs from the original
 430eforth.a43 file. A code-block had to be put to an end position, 2
-bugs fixed, tiny tools added. Original eForth WORDS are the same. See:
+bugs fixed, tiny tools added. Original eForth `WORDS` are the same. See:
 screenshots of old (CCS) and new (naken) version.  WORDS .S and some
 compiling are ok.
 
