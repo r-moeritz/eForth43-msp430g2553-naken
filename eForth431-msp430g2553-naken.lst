@@ -3769,6 +3769,8 @@ intvecs:
          DC16  init           ; FFFE - Reset
 
 	.end
+;===============================================================
+
 data sections:
 1000: de cf 0a 00 00 00 00 00 00 00 00 00 dc ca 64 d0  ..............d.
 1010: a8 d0 20 02 64 d0                                .. .d.
@@ -4321,11 +4323,11 @@ Program Info:
  -> Total symbols: 279
 
 Include Paths: .
-               /usr/local/share/naken_asm/include
+               /home/ralph/Programs/naken_asm/share/naken_asm/include
                include
  Instructions: 441
    Code Bytes: 1322
    Data Bytes: 2958
-  Low Address: 1000 (4096)
- High Address: ffff (65535)
+  Low Address: 0x1000 (4096)
+ High Address: 0xffff (65535)
 
